@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>TagSuggest Demo</title>
+        <link rel="stylesheet prefetch" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="tagsuggest.css">
+    </head>
+    <body>
+        <h3>Whats your favorite fruit</h3>
+        <input id="ms1" style="width:400px;" type="text" name="ms1"/>
+        <div style="clear:both;"></div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="tagsuggest.js"></script>
+        <script>
+            $(document).ready(function() {
+                var jsonData = [];
+                var fruits = 'Apple,Orange,Banana,Strawberry'.split(',');
+                for(var i=0;i<fruits.length;i++) jsonData.push({id:i,name:fruits[i]});
+                var ms1 = $('#ms1').tagSuggest({
+                    data: jsonData,
+                    sortOrder: 'name',
+                    maxDropHeight: 200,
+                    name: 'ms1'
+                });
+            });
+        </script>
+    </body>
+</html>
